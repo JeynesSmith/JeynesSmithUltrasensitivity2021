@@ -1,0 +1,13 @@
+ring R = (0, a1, d1, k1, a2, d2, k2, a3, d3, k3, WT, E2T), (E1,E2,C1,C2,C3,W,Ws,E1T), lp;
+poly f1 = d1*C1 + k2*C2 + d3*C3 - a1*W*E1 - a3*W*Ws;
+poly f2 = k1*C1 + d2*C2 + d3*C3 + 2*k3*C3 - a2*Ws*E2 - a3*Ws*W;
+poly f3 = d1*C1 + k1*C1 - a1*W*E1;
+poly f4 = d2*C2 + k2*C2 - a2*E2*Ws;
+poly f5 = a1*W*E1 - d1*C1 - k1*C1;
+poly f6 = a2*Ws*E2 - d2*C2 - k2*C2;
+poly f7 = a3*Ws*W - d3*C3 - k3*C3;
+poly f8 = C1 + E1 - E1T;
+poly f9 = C2 + E2 - E2T;
+poly f10 = W + Ws + C1 + C2 + 2*C3 - WT;
+ideal I = f1,f2,f3,f4,f5,f6,f7,f8,f9,f10;
+ideal GI = groebner(I);
